@@ -29,19 +29,20 @@ var app = new Vue({
   },
   methods: {
     clickCell(cella, index) {
-      this.indexSelected = index;
-      this.cellSelected = cella;
-
-      //inizia la x
-      if (cella === "") {
-        if (this.round % 2 === 0) {
-          this.$set(this.grid, index, this.user1);
-          console.log(this.grid);
-        } else {
-          this.$set(this.grid, index, this.user2);
-          console.log(this.grid);
+      if (!this.endGame) {
+        this.indexSelected = index;
+        this.cellSelected = cella;
+        //inizia la x
+        if (cella === "") {
+          if (this.round % 2 === 0) {
+            this.$set(this.grid, index, this.user1);
+            console.log(this.grid);
+          } else {
+            this.$set(this.grid, index, this.user2);
+            console.log(this.grid);
+          }
+          this.round++;
         }
-        this.round++;
       }
       this.checkWinner();
       console.log("Grid after", this.grid);
@@ -49,13 +50,6 @@ var app = new Vue({
       console.log("Winning ", this.winningConditions);
     },
     checkWinner() {
-      this.winningConditions.forEach((el) => {
-        var indiceArr = el;
-        console.log("indiceArr", indiceArr);
-        for (let j = 0; j < indiceArr.length; j++) {
-          const element = indiceArr[j];
-        }
-      });
       for (let index = 0; index < this.grid.length; index++) {
         const element = this.grid[index];
         if (
