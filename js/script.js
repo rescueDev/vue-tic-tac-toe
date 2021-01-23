@@ -45,9 +45,9 @@ var app = new Vue({
         }
       }
       this.checkWinner();
-      console.log("Grid after", this.grid);
+      /*       console.log("Grid after", this.grid);
       console.log("Round", this.round);
-      console.log("Winning ", this.winningConditions);
+      console.log("Winning ", this.winningConditions); */
     },
     checkWinner() {
       for (let index = 0; index < this.grid.length; index++) {
@@ -114,6 +114,9 @@ var app = new Vue({
           this.winner = "draw";
         }
       }
+    },
+    newGame() {
+      location.reload();
     },
   },
   watch: {
