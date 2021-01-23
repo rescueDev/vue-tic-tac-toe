@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#grid {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: calc(100% / 3);
+  border: 1px solid black;
+  height: calc(100% / 3);
+  text-align: center;
+  line-height: calc(400px / 3);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.winner {
+  width: 200px;
+  border: 1px solid black;
+}
+
+.notactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
