@@ -22,18 +22,20 @@
             {{celle}}
           </div>
         </section>
-        <div v-if="endGame === true" class="winner">
-          <div v-if="displayWinner === 'X'">
-            <h3>The winner is X</h3>
+        <transition name="fade">
+          <div v-if="endGame === true" class="winner">
+            <div v-if="displayWinner === 'X'">
+              <h3>The winner is X</h3>
+            </div>
+            <div v-else-if="displayWinner === 'O'">
+              <h3>The winner is O</h3>
+            </div>
+            <div v-else-if="displayWinner === 'draw'">
+              <h3>It's a draw</h3>
+            </div>
+            <button @click="newGame()">Play Again</button>
           </div>
-          <div v-else-if="displayWinner === 'O'">
-            <h3>The winner is O</h3>
-          </div>
-          <div v-else-if="displayWinner === 'draw'">
-            <h3>It's a draw</h3>
-          </div>
-          <button @click="newGame()">Play Again</button>
-        </div>
+        </transition>
       </main>
     </div>
     <script src="js/script.js"></script>
