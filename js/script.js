@@ -130,4 +130,5 @@ var app = new Vue({
       }
     },
   },
+  computed: {},
 });

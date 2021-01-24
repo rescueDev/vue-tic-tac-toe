@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
-#game {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* min-height: 100vh; */
+}
+
+#game {
+  margin: 50% auto;
+  min-height: 100vh;
 }
 
 #grid {
@@ -30,14 +35,26 @@
 }
 
 .winner {
-  width: 200px;
-  border: 1px solid black;
+  width: 50%;
+  /* border: 1px solid black; */
+  margin: 40px auto;
+  text-align: center;
 }
 
-.notactive {
-  display: none;
+.winner h3 {
+  font-size: 24px;
+  margin: 20px 0;
 }
 
-.active {
-  display: block;
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgreen;
+  color: slategray;
+  font-size: large;
+}
+
+button:hover {
+  cursor: pointer;
 }
